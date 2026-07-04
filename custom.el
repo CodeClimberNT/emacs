@@ -5,8 +5,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(apheleia corfu devdocs go-mode gruber-darker-theme magit rust-mode
-              simpc-mode vertico web-mode))
+   '(apheleia corfu devdocs dotenv-mode git-modes go-mode
+              gruber-darker-theme json-mode magit markdown-mode
+              rust-mode simpc-mode toml-mode vertico web-mode
+              yaml-mode))
  '(package-vc-selected-packages '((simpc-mode :url "https://github.com/rexim/simpc-mode"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

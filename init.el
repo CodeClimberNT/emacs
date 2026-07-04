@@ -74,7 +74,6 @@
 ;; 6. LANGUAGE DEVELOPMENT SETUP
 ;; ==========================================
 
-
 (unless (package-installed-p 'simpc-mode)
   (package-vc-install "https://github.com/rexim/simpc-mode"))
 (use-package simpc-mode
@@ -87,14 +86,31 @@
 (use-package go-mode
   :mode "\\.go\\'")
 
-;; ;; --- Frontend (HTML, CSS, JS, TS) ---
-;; ;; web-mode is an excellent all-in-one package for web languages
-;; (use-package web-mode
-;;   :mode ("\\.html?\\'" "\\.css\\'" "\\.js\\'" "\\.ts\\'")
-;;   :custom
-;;   (web-mode-markup-indent-offset 2)
-;;   (web-mode-css-indent-offset 2)
-;;   (web-mode-code-indent-offset 2))
+(use-package web-mode
+  :mode ("\\.html?\\'" "\\.css\\'" "\\.js\\'" "\\.ts\\'")
+  :custom
+  (web-mode-markup-indent-offset 2)
+  (web-mode-css-indent-offset 2)
+  (web-mode-code-indent-offset 2))
+
+(use-package git-modes)
+
+(use-package dotenv-mode
+  :mode ("\\.env\\'" "\\.env\\..*\\'"))
+
+(use-package markdown-mode
+  :mode ("\\.md\\'" "\\.markdown\\'")
+  :custom
+  (markdown-command "pandoc"))
+
+(use-package json-mode
+  :mode "\\.json\\'")
+
+(use-package yaml-mode
+  :mode "\\.ya?ml\\'")
+
+(use-package toml-mode
+  :mode "\\.toml\\'")
 
 ;; ==========================================
 ;; 7. AUTOCOMPLETION & LSP

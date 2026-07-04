@@ -6,3 +6,7 @@ elpa/
 eln-cache/
 auto-save-list/
 projects
+
+# Pandoc garbage from Markdown files
+*.html
+transient
