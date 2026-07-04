@@ -73,7 +73,6 @@
 ;; ==========================================
 ;; 6. LANGUAGE DEVELOPMENT SETUP
 ;; ==========================================
-
 (unless (package-installed-p 'simpc-mode)
   (package-vc-install "https://github.com/rexim/simpc-mode"))
 (use-package simpc-mode
@@ -111,6 +110,31 @@
 
 (use-package toml-mode
   :mode "\\.toml\\'")
+
+;; --- Chezmoi & Go Templates (.tmpl) ---
+;; Install the major mode that handles the {{ ... }} blocks
+(use-package go-template-mode)
+
+;; Polymode allows multiple major modes in a single buffer
+(use-package polymode
+  :config
+  ;; Define a hostmode that dynamically checks the file type before .tmpl
+  (define-hostmode poly-chezmoi-hostmode :mode nil)
+
+  ;; Fixed: Using modern :head-matcher and :tail-matcher slots instead of :delimiter-regexp
+  (define-innermode poly-chezmoi-innermode
+    :mode 'go-template-mode
+    :head-matcher "{{"
+    :tail-matcher "}}"
+    :head-mode 'host
+    :tail-mode 'host)
+
+  (define-polymode poly-chezmoi-mode
+    :hostmode 'poly-chezmoi-hostmode
+    :innermodes '(poly-chezmoi-innermode))
+
+  ;; Automatically bind .tmpl files to this dynamic polymode
+  (add-to-list 'auto-mode-alist '("\\.tmpl\\'" . poly-chezmoi-mode)))
 
 ;; ==========================================
 ;; 7. AUTOCOMPLETION & LSP

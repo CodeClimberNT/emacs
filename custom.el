@@ -6,9 +6,9 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    '(apheleia corfu devdocs dotenv-mode git-modes go-mode
-              gruber-darker-theme json-mode magit markdown-mode
-              rust-mode simpc-mode toml-mode vertico web-mode
-              yaml-mode))
+              go-template-mode gruber-darker-theme json-mode magit
+              markdown-mode polymode rust-mode simpc-mode toml-mode
+              vertico web-mode yaml-mode))
  '(package-vc-selected-packages '((simpc-mode :url "https://github.com/rexim/simpc-mode"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
