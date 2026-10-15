@@ -1,0 +1,2 @@
+;;; -*- coding: utf-8; mode: lisp-data -*-
+(("/home/nick/code/slim/slim_gsgp/example_gp.py" . 2284) ("/home/nick/code/slim/slim_gsgp/example_gsgp.py" . 1793) ("/home/nick/.config/emacs/.cache/treemacs-persist" . 42) ("/home/nick/code/slim/slim_gsgp/" (dired-filename . "/home/nick/code/slim/slim_gsgp/example_gp.py")) ("/home/nick/code/slim/" (dired-filename . "/home/nick/code/slim/slim_gsgp")) ("/home/nick/code/" (dired-filename . "/home/nick/code/slim")) ("/home/nick/" (dired-filename . "/home/nick/code")))
